@@ -1,0 +1,113 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Staminna Settings",
+   Icon = 0,
+   LoadingTitle = "Stamina Settings",
+   LoadingSubtitle = "By str_windows.xp",
+   Theme = "Default",
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false,
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil,
+      FileName = "Big Hub"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink",
+      RememberJoins = true
+   },
+   KeySystem = true,
+   KeySettings = {
+      Title = "Idk",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided",
+      FileName = "Key",
+      SaveKey = false,
+      GrabKeyFromSite = false,
+      Key = {"Pupsik228"}
+   }
+})
+
+Rayfield:Notify({
+   Title = "Its my first script",
+   Content = "Credits to tarmasterr for help!",
+   Duration = 6.5,
+   Image = 103662765726428,
+})
+
+local num1 = 0
+local num2 = 20
+local num3 = 10
+local num4 = 24
+local num5 = false
+
+local Tab = Window:CreateTab("Tab Example", 103662765726428)
+Tab:CreateSection("Section Example")
+
+Tab:CreateInput({
+   Name = "Min Stamina",
+   CurrentValue = tonumber(num1),
+   PlaceholderText = "Number",
+   RemoveTextAfterFocusLost = false,
+   Flag = "Input1",
+   Callback = function(ms)
+      num1 = ms
+   end,
+})
+
+Tab:CreateInput({
+   Name = "Stamina Gain",
+   CurrentValue = tonumber(num2),
+   PlaceholderText = "Number",
+   RemoveTextAfterFocusLost = false,
+   Flag = "Input2",
+   Callback = function(sg)
+      num2 = sg
+   end,
+})
+
+Tab:CreateInput({
+   Name = "Stamina Loss",
+   CurrentValue = tonumber(num3),
+   PlaceholderText = "Number",
+   RemoveTextAfterFocusLost = false,
+   Flag = "Input3",
+   Callback = function(sl)
+      num3 = sl
+   end,
+})
+
+Tab:CreateInput({
+   Name = "Stamina Speed",
+   CurrentValue = tonumber(num4),
+   PlaceholderText = "Number",
+   RemoveTextAfterFocusLost = false,
+   Flag = "Input4",
+   Callback = function(sp)
+      num4 = sp
+   end,
+})
+
+Tab:CreateToggle({
+   Name = "Disable Stamina Drain",
+   CurrentValue = num5,
+   Flag = "Toggle1",
+   Callback = function(sd)
+      num5 = sd
+   end,
+})
+
+Tab:CreateButton({
+   Name = "Inj3ct Stamina Settings 😈",
+   Callback = function()
+      local Sprinting = game:GetService("ReplicatedStorage").Systems.Character.Game.Sprinting
+      local m = require(Sprinting)
+      m.MinStamina = tonumber(num1)
+      m.StaminaGain = tonumber(num2)
+      m.StaminaLoss = tonumber(num3)
+      m.SprintSpeed = tonumber(num4)
+      m.StaminaLossDisabled = num5
+   end,
+})
