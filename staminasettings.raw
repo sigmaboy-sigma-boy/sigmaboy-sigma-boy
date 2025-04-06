@@ -9,9 +9,9 @@ local Window = Rayfield:CreateWindow({
    DisableRayfieldPrompts = false,
    DisableBuildWarnings = false,
    ConfigurationSaving = {
-      Enabled = false,
-      FolderName = nil,
-      FileName = "Big Hub"
+      Enabled = true,
+      FolderName = ForsakenScript,
+      FileName = "StaminaSettings"
    },
    Discord = {
       Enabled = false,
@@ -20,9 +20,9 @@ local Window = Rayfield:CreateWindow({
    },
    KeySystem = true,
    KeySettings = {
-      Title = "Idk",
-      Subtitle = "Key System",
-      Note = "No method of obtaining the key is provided",
+      Title = "Key system",
+      Subtitle = "",
+      Note = "Key is Pupsik228",
       FileName = "Key",
       SaveKey = false,
       GrabKeyFromSite = false,
